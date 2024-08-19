@@ -1,3 +1,4 @@
+import { GiscusProps, Theme } from '@giscus/react'
 import { ExtendedRecordMap, PageMap } from 'notion-types'
 import { ParsedUrlQuery } from 'querystring'
 
@@ -69,4 +70,8 @@ export interface NotionPageInfo {
   author: string
   authorImage: string
   detail: string
+}
+
+export interface GiscusInfo extends GiscusProps {
+  darkTheme?: Theme
 }
