@@ -25,6 +25,7 @@ import {
   posthogConfig,
   posthogId
 } from '@/lib/config'
+import { GoogleAnalytics } from 'nextjs-google-analytics'
 
 export default function App({ Component, pageProps }: AppProps) {
   const router = useRouter()
@@ -55,5 +56,10 @@ export default function App({ Component, pageProps }: AppProps) {
     }
   }, [router.events])
 
-  return <Component {...pageProps} />
+  return (
+    <>
+      <GoogleAnalytics trackPageViews />
+      <Component {...pageProps} />
+    </>
+  )
 }
