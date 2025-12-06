@@ -61,7 +61,7 @@ const getSitemapEntries = (siteMap: SiteMap, now: string) => {
       }
     })
     .filter(Boolean)
-    .sort((a, b) => b.lastmod.localeCompare(a.lastmod))
+    .toSorted((a, b) => b.lastmod.localeCompare(a.lastmod))
 }
 
 const createSitemap = (siteMap: SiteMap) => {
